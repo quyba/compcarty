@@ -1,0 +1,72 @@
+<header class="row">
+  <h1 class="text-center col-md-6 col-md-offset-3">Registra tu carro</h1>
+</header>
+<section class="row">
+  <form>
+    <div class="form-group col-md-8 col-md-offset-3">
+      <label for="n_days">Precio Por Dia en centavos</label>
+      <input type="text" name="n_days">
+      <label for="n_km">Precio Por Kilometro</label>
+      <input type="text" name="n_km">
+      <br/>
+      <label for="tl_day">Total dia: </label>
+      <br/>
+      <label for="tl_km">Total KM: </label>
+    </div>
+    <div class="form-group col-md-6 col-md-offset-3 text-center">
+      <button class="btn btn-primary btn-lg">Registrar</button>
+    </div>
+  </form>
+</section>
+<hr>
+<section class="row">
+  <h1 class="text-center h2">Results</h1>
+
+
+
+  <section ng-controller="CarCtrl" class="well col-md-6 col-md-offset-3">
+    <table>
+      <tr>
+        <th>ID</th>
+		    <th>Precio por dia</th>
+        <th>Precio por Kilometro</th>
+      </tr>
+      <tr ng-repeat="cars in car | orderBy: 'id' ">
+        <td>{{cars.id}}</td>
+		    <td>{{car.price_per_day}}</td>
+        <td>{{car.price_per_km}}</td>
+      </tr>
+    </table>
+
+    <!-- <div ng-controller="CarCtrl">
+    <p>    Click <a ng-click="loadCar()">here</a> to load data.</p>
+      <table>
+          <tr>
+              <th>Id</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+          </tr>
+          <tr ng-repeat="person in people">
+              <td>{{car.id}}</td>
+              <td>{{car.price_per_day}}</td>
+              <td>{{car.price_per_km}}</td>
+          </tr>
+      </table>
+      </div> -->
+
+  </section>
+  <section class="well col-md-6 col-md-offset-3">
+    <h1 class="h3 col-md-6 text-right" style="margin-top: 0"><a href="#">Garlic Mashed Potatoes</a></h1>
+    <div class="col-md-6">
+      <button class="btn btn-info">Edit</button>
+      <button class="btn btn-danger">Delete</button>
+    </div>
+  </section>
+  <section class="well col-md-6 col-md-offset-3">
+    <h1 class="h3 col-md-6 text-right" style="margin-top: 0"><a href="#">Potatos Au Gratin</a></h1>
+    <div class="col-md-6">
+      <button class="btn btn-info">Edit</button>
+      <button class="btn btn-danger">Delete</button>
+    </div>
+  </section>
+</section>
