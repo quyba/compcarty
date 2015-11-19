@@ -31,29 +31,12 @@
 		    <th>Precio por dia</th>
         <th>Precio por Kilometro</th>
       </tr>
-      <tr ng-repeat="cars in car | orderBy: 'id' ">
+      <tr ng-repeat="car in cars | orderBy: 'id' ">
         <td>{{cars.id}}</td>
 		    <td>{{car.price_per_day}}</td>
         <td>{{car.price_per_km}}</td>
       </tr>
     </table>
-
-    <!-- <div ng-controller="CarCtrl">
-    <p>    Click <a ng-click="loadCar()">here</a> to load data.</p>
-      <table>
-          <tr>
-              <th>Id</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-          </tr>
-          <tr ng-repeat="person in people">
-              <td>{{car.id}}</td>
-              <td>{{car.price_per_day}}</td>
-              <td>{{car.price_per_km}}</td>
-          </tr>
-      </table>
-      </div> -->
-
   </section>
   <section class="well col-md-6 col-md-offset-3">
     <h1 class="h3 col-md-6 text-right" style="margin-top: 0"><a href="#">Garlic Mashed Potatoes</a></h1>
