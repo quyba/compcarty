@@ -26,26 +26,3 @@ compcarty.controller 'CarCtrl', ($scope, $http) ->
     $scope.info = data
     return
   return
-
-
-# CarCtrl = ($scope, $http) ->
-#   $scope.car = []
-#   $scope.loadCar = ->
-#     httpRequest = $http(
-#       method: 'POST'
-#       url: '/echo/json/'
-#       data: $http.get('/data.json')).success((data, status) ->
-#       $scope.car = data
-#       return
-#     )
-#     return
-#
-#   return
-
-
-
-# countryApp.controller('CountryCtrl', function ($scope, $http) {
-#    $http.get('countries.json').success(function(data) {
-#        $scope.countries = data;
-#    });
-# });
