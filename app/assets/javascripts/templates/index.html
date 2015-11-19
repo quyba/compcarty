@@ -4,7 +4,7 @@
 <section class="row">
   <form>
     <div class="form-group col-md-8 col-md-offset-3">
-      <label for="n_days">Precio Por Dia en centavos</label>
+      <label for="n_days">Precio Por Dia</label>
       <input type="text" name="n_days">
       <label for="n_km">Precio Por Kilometro</label>
       <input type="text" name="n_km">
@@ -20,36 +20,37 @@
 </section>
 <hr>
 <section class="row">
-  <h1 class="text-center h2">Results</h1>
-
-
-
+  <h1 class="text-center h2">Reserva Tu Carro</h1>
   <section ng-controller="CarCtrl" class="well col-md-6 col-md-offset-3">
-    <table>
-      <tr>
-        <th>ID</th>
-		    <th>Precio por dia</th>
-        <th>Precio por Kilometro</th>
-      </tr>
-      <tr ng-repeat="car in cars | orderBy: 'id' ">
-        <td>{{cars.id}}</td>
-		    <td>{{car.price_per_day}}</td>
-        <td>{{car.price_per_km}}</td>
-      </tr>
-    </table>
+    <form>
+      <div ng-repeat="car in info.cars" class="form-group col-md-4">
+        <label for="carnumber">Carro: {{car.id}} </label>
+        <br>
+        <label for="n_days">Numero de dias:</label>
+        <input type="number" name="n_days" ng-model="car.n_days">
+        <label for="n_km">Distancia Aproximada:</label>
+        <input type="number" name="n_km" ng-model="car.n_km">
+        <br/>
+        <label for="tl_day">Total dia: {{car.tl_day = (car.n_days*car.price_per_day)/100 | currency}} </label>
+        <br/>
+        <label for="tl_km">Total KM: {{car.tl_km=(car.n_km*car.price_per_km)/100 | currency}}</label>
+        <br>
+        <label for="tl_al">Total Alquiler: {{car.tl_day+car.tl_km | currency}}</label>
+        <button class="btn btn-primary btn-lg">Reserva</button>
+      </div>
+    </form>
   </section>
-  <section class="well col-md-6 col-md-offset-3">
-    <h1 class="h3 col-md-6 text-right" style="margin-top: 0"><a href="#">Garlic Mashed Potatoes</a></h1>
-    <div class="col-md-6">
-      <button class="btn btn-info">Edit</button>
-      <button class="btn btn-danger">Delete</button>
-    </div>
-  </section>
-  <section class="well col-md-6 col-md-offset-3">
-    <h1 class="h3 col-md-6 text-right" style="margin-top: 0"><a href="#">Potatos Au Gratin</a></h1>
-    <div class="col-md-6">
-      <button class="btn btn-info">Edit</button>
-      <button class="btn btn-danger">Delete</button>
-    </div>
+  <section ng-controller="CarCtrl" class="well col-md-6 col-md-offset-3">
+    <h2>Lista de Vehiculos y precios</h2>
+    <ul ng-repeat="car in info.cars" class="col-md-4">
+      <li>
+        <h3>Numero del vehiculo:</<h3>
+        {{car.id}}
+        <h3>Precio por dia:</<h3>
+        {{car.price_per_day/100 | currency}}
+        <h3>Precio por kilometro:</<h3>
+        {{car.price_per_km/100 | currency}}
+      </li>
+    </ul>
   </section>
 </section>
