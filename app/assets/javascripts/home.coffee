@@ -5,6 +5,7 @@ compcarty = angular.module('compcarty',[
   'templates',
   'ngRoute',
   'controllers',
+  'angularMoment',
 ])
 
 compcarty.config([ '$routeProvider',

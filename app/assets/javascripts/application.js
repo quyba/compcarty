@@ -15,6 +15,8 @@
 //= require angular/angular
 //= require angular-rails-templates
 //= require angular-route/angular-route
+//= require angular-moment
+//= require moment
 //
 // Templates in app/assets/javascript/templates
 //= require_tree ./templates

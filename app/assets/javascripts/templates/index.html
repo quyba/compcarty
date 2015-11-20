@@ -40,6 +40,26 @@
       </div>
     </form>
   </section>
+
+  <section ng-controller="CarCtrl" class="well col-md-6 col-md-offset-3">
+    <h2>Reservas</h2>
+    <div ng-repeat="rent in info.rentals" class="form-group col-md-6">
+      <label for="rentnumber">Reserva: {{rent.id}} </label>
+      <br>
+      <label for="rentnumber">Carro Reserva: {{rent.car_id}} </label>
+      <br>
+      <label for="rentdatestart">Fecha de reserva: {{rent.start_date}} </label>
+      <br>
+      <label for="rentdateend">Fecha de entrega: {{rent.end_date}} </label>
+      <br>
+      <label for="rentdist">Distancia: {{rent.distance}} </label>
+      <br>
+      <label for="rentdays">Dias de alquiler: {{rent.days = (rent.start_date | amDifference : rent.end_date : 'days')*-1 }} dias</label>
+      <br>
+      <label for="renttotal">Valor final del alquiler: {{(rent.days * 2000)/100 | currency}}</label>
+    </div>
+  </section>
+
   <section ng-controller="CarCtrl" class="well col-md-6 col-md-offset-3">
     <h2>Lista de Vehiculos y precios</h2>
     <ul ng-repeat="car in info.cars" class="col-md-4">
