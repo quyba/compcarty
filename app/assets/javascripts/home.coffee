@@ -21,8 +21,12 @@ controllers.controller("CompcartyController", [ '$scope',
   ($scope)->
 ])
 
-compcarty.controller 'CarCtrl', ($scope, $http) ->
-  $http.get('/data.json').success (data) ->
-    $scope.info = data
+compcarty.controller 'CarCtrl', [
+  '$scope'
+  '$http'
+  ($scope, $http) ->
+    $http.get('/data.json').success (data) ->
+      $scope.info = data
+      return
     return
-  return
+]
